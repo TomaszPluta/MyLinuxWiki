@@ -11,7 +11,24 @@ Edit `/etc/systemd/logind.conf` \
 Write:\
 `[Service]`\
 `ExecStart=`\
-`ExecStart=-/sbin/agetty --autologin tomek --noclear %I 38400 linux`\
+`ExecStart=-/sbin/agetty --autologin userName --noclear %I 38400 linux`\
 
 After saving - in terminal:\
 `systemctl enable getty@tty1.service`
+
+
+## Example lsyncd config (/etc/lsyncd/lsyncd.conf.lua) :
+>settings {\
+>        logfile = "/var/log/lsyncd/lsyncd.log",\
+>        statusFile = "/var/log/lsyncd/lsyncd.status",\
+>   statusInterval = 20,
+>   nodaemon   = false
+>}
+
+>sync {\
+>        default.rsync,\
+>        source = "/home/userName/testSource",\
+>        target = "/home/userName/testBackup",\
+>delete = "false"\
+>}
+
