@@ -32,3 +32,10 @@ After saving - in terminal:\
 >delete = "false"\
 >}
 
+
+## Turn off external usb-disk:
+`udisksctl power-off -b /dev/sdb` - need to re-plug to operate again\
+or:\
+`sudo hdparm -S 1 /dev/sdb` - suspend after 5sec inactivity (back to operation after any access, eg. remount)
+
+
