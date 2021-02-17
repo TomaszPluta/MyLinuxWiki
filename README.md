@@ -39,3 +39,13 @@ or:\
 `sudo hdparm -S 1 /dev/sdb` - suspend after 5sec inactivity (back to operation after any access, eg. remount)
 
 
+## Simplest mount operation:
+`sudo mount -t ntfs /dev/sdxN /mounting/point/here`
+
+## Mount samba share
+`sudo mount -t cifs -o credentials=/home/user/SmbCredentialFileName,iocharset=utf8,rw,nodfs,_netdev,noperm //10.0.0.x/ShareName/ /mount/point/here/` 
+
+credential file example:
+> user=UserNameHere\
+> password=UserPasswordHere\
+> domain=WorkgroupNameHere (default:WORKGROUP)
