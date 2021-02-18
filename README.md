@@ -42,10 +42,25 @@ or:\
 ## Simplest mount operation:
 `sudo mount -t ntfs /dev/sdxN /mounting/point/here`
 
-## Mount samba share
+## Mount network samba share
 `sudo mount -t cifs -o credentials=/home/user/SmbCredentialFileName,iocharset=utf8,rw,nodfs,_netdev,noperm //10.0.0.x/ShareName/ /mount/point/here/` 
 
 credential file example:
 > user=UserNameHere\
 > password=UserPasswordHere\
 > domain=WorkgroupNameHere (default:WORKGROUP)
+> 
+
+## samba  network samba share
+>/etc/samba/smb.conf\
+>[global]\
+>   server string = MyServerName\
+>   workgroup = WorkgroupNameHere (default:WORKGROUP)\
+>   \
+>[MyShareName]\
+>        path = /path/to/shared/dir\
+>        browseable = yes\
+>        read only = no\
+>        force create mode = 0660\
+>        force directory mode = 2770\
+>        valid users = userName\
