@@ -51,7 +51,7 @@ credential file example:
 > domain=WorkgroupNameHere (default:WORKGROUP)
 > 
 
-## samba  network samba share
+## samba network samba share
 >/etc/samba/smb.conf\
 >[global]\
 >   server string = MyServerName\
@@ -64,3 +64,7 @@ credential file example:
 >        force create mode = 0660\
 >        force directory mode = 2770\
 >        valid users = userName\
+
+
+## checking computer internal temperature
+`cat /sys/class/thermal/thermal_zone0/temp`
