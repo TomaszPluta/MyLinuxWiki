@@ -68,3 +68,15 @@ credential file example:
 
 ## checking computer internal temperature
 `cat /sys/class/thermal/thermal_zone0/temp`
+
+## hibernate linux (needs more SWAP than RAM)
+`sudo apt install uswsusp` - install user space suspend package\
+`sudo dpkg-reconfigure -pmedium uswsusp` - create config file\
+`sudo update-initramfs -u` - update initframes\
+`sudo s2disk` - will hibernate\
+
+## Wake on lan
+`sudo ifconfig` - for checking eth device\
+`sudo ethtool -s INTERFACE_NAME_HERE wol g` - enable WOL (for this session)\
+`wakeonlan MAC_ADDR_HERE` - wake from other computer\
+
