@@ -17,6 +17,10 @@ After saving - in terminal:\
 `systemctl enable getty@tty1.service`
 
 
+## rsync usage
+`rsync -avP user@ipAddress:source/directory/ /output/dir`
+
+
 ## Example lsyncd config (/etc/lsyncd/lsyncd.conf.lua) :
 >settings {\
 >        logfile = "/var/log/lsyncd/lsyncd.log",\
